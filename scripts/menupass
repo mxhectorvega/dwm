@@ -1,0 +1,3 @@
+#!/bin/sh
+
+dmenu -fn SF\\Pro\\Text-12 -P -p " $1" <&- && echo
