@@ -1,0 +1,6 @@
+export PATH="$PATH:$(du "$HOME/.local/scripts" | cut -f2 | paste -sd ':' -)"
+export SUDO_ASKPASS="$HOME/.local/scripts/menupass"
+curl -sf "wttr.in/VER?format=1" > /tmp/clima
+wal -i "$(< "$HOME/.cache/wal/wal")"
+xset r rate 300 50 &
+xcompmgr &

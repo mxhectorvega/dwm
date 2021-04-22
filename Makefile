@@ -34,6 +34,8 @@ dist: clean
 	rm -rf dwm-${VERSION}
 
 install: all
+	mkdir -p $(DESTDIR)/usr/share/xsessions
+	cp -f dwm.desktop $(DESTDIR)/usr/share/xsessions
 	mkdir -p ${DESTDIR}${PREFIX}/bin
 	cp -f dwm ${DESTDIR}${PREFIX}/bin
 	chmod 755 ${DESTDIR}${PREFIX}/bin/dwm
@@ -43,6 +45,7 @@ install: all
 	mkdir -p ${DESTDIR}${PREFIX}/share/dwm
 
 uninstall:
+	rm -f $(DESTDIR)/usr/share/xsessions/dwm.desktop
 	rm -f ${DESTDIR}${PREFIX}/bin/dwm\
 		${DESTDIR}${MANPREFIX}/man1/dwm.1
 
